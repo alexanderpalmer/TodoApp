@@ -18,7 +18,7 @@ header nav a {
     color:  #fdf6e3;
 }
 
-#todo {
+#todo, #todoAdd {
     color:  #fdf6e3;
     background-color: rgba(7, 54, 66, 1);
     border-radius: 5px;
@@ -31,10 +31,20 @@ header nav a {
     text-decoration: none;
 }
 
-#todo .todo-done {
+#todo .todo-done, .todo-add {
     display: inline-block;
     color:  #2aa198;
     font-size: 2em;
+}
+
+#todoAdd {
+    background-color: rgba(88,109,117,1);
+}
+#todoAdd h6 {
+    color: #002b36;
+   
+    padding-top: 1em;
+    background-color: rgba(88,109,117,1);
 }
 
 #todo .appointment {
