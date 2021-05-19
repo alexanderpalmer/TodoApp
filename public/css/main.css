@@ -1,0 +1,51 @@
+body {
+    background-color: #002b36;
+}
+
+header {
+    color: #fdf6e3;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    background-color: #002b36;
+    
+}
+
+header nav a {
+    color:  #fdf6e3;
+}
+
+#todo {
+    color:  #fdf6e3;
+    background-color: rgba(7, 54, 66, 1);
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+#todo a {
+    color:  #fdf6e3;
+    text-decoration: none;
+}
+
+#todo .todo-done {
+    display: inline-block;
+    color:  #2aa198;
+    font-size: 2em;
+}
+
+#todo .appointment {
+    font-size: 0.8em;
+}
+
+#todo .appointment>i {
+    margin-right: 5px;
+    color: #2aa198;
+}
+
+#offcanvasSettings, #offcanvasAppointment {
+    background-color: rgba(88,109,117,0.95);
+}
+
+#offcanvasSettingsLabel, #offcanvasAppointmentLabel {
+    color:  #fdf6e3;
+}
