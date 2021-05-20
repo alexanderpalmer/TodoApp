@@ -55,7 +55,7 @@
           <i class="bi bi-circle todo-done"></i>
         </div>
         <div class="col-10">
-          <a data-bs-toggle="offcanvas" href="#offcanvasAppointment">
+          <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
             <h6>Eine Aufgabe die zu erledigen ist</h6>
             <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
           </a>
@@ -70,8 +70,10 @@
           <i class="bi bi-circle todo-done"></i>
         </div>
         <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+            <h6>Eine Aufgabe die zu erledigen ist</h6>
+            <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          </a>
         </div>
       </div>
     </article>
@@ -83,8 +85,10 @@
           <i class="bi bi-circle todo-done"></i>
         </div>
         <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+            <h6>Eine Aufgabe die zu erledigen ist</h6>
+            <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          </a>
         </div>
       </div>
     </article>
@@ -96,8 +100,10 @@
           <i class="bi bi-circle todo-done"></i>
         </div>
         <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+            <h6>Eine Aufgabe die zu erledigen ist</h6>
+            <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          </a>
         </div>
       </div>
     </article>
@@ -109,8 +115,10 @@
           <i class="bi bi-circle todo-done"></i>
         </div>
         <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+            <h6>Eine Aufgabe die zu erledigen ist</h6>
+            <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          </a>
         </div>
       </div>
     </article>
@@ -122,8 +130,11 @@
           <i class="bi bi-circle todo-done"></i>
         </div>
         <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          <!-- <a data-bs-toggle="offcanvas" href="#offcanvasAppointment">  -->
+          <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+            <h6>Eine Aufgabe die zu erledigen ist</h6>
+            <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          </a>
         </div>
       </div>
     </article>
@@ -135,37 +146,14 @@
           <i class="bi bi-circle todo-done"></i>
         </div>
         <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+            <h6>Eine Aufgabe die zu erledigen ist</h6>
+            <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
+          </a>
         </div>
       </div>
     </article>
 
-    <!-- Appointment -->
-    <article class="container" id="todo">
-      <div class="row gx-0">
-        <div class="col-2">
-          <i class="bi bi-circle todo-done"></i>
-        </div>
-        <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- Appointment -->
-    <article class="container" id="todo">
-      <div class="row gx-0">
-        <div class="col-2">
-          <i class="bi bi-circle todo-done"></i>
-        </div>
-        <div class="col-10">
-          <h6>Eine Aufgabe die zu erledigen ist</h6>
-          <span class="appointment"><i class="bi bi-calendar3"></i>Mi, 17.Mai 2021</span>
-        </div>
-      </div>
-    </article>
   </main>
 
   <!-- Offcanvas Settings-->
@@ -180,19 +168,40 @@
     </div>
   </div>
 
-  <!-- Offcanvas Appointment-->
-  <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasAppointment">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasAppointmentLabel">Offcanvas</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div>Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
-        etc.</div>
+  <!-- Modal New or Change Appointment -->
+  <div class="modal fade" id="modalAppointment" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAppointmentLabel">Neue Aufgabe</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="container m-0 mb-2 p-0">
+              <label for="appointmentDescription" class="form-label">Aufgabe</label>
+              <input type="text" class="form-control" id="appointmentDescription">
+            </div>
+            <div class="container m-0 p-0">
+              <label for="appointmentExcecutionDate" class="form-label">Fälligkeitsdatum</label>
+              <input type="date" class="form-control" id="appointmentExcecutionDate">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary appointmentButtonSave">
+              Aufgabe speichern
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+
+
   <footer class="container">
-    <i id="todoAdd" class="bi bi-plus-circle-fill fixed-bottom"></i>
+    <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+      <i id="todoAdd" class="bi bi-plus-circle-fill fixed-bottom"></i>
+    </a>
   </footer>
 </body>
 

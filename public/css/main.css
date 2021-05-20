@@ -55,7 +55,7 @@ header nav #settingsSymbol {
     font-size: 3em;
     color:#dc322f;
     left: auto;
-    right: 0.2em;
+    right: 0.5em;
     bottom: 0;
 }
 #todoAdd h6 {
@@ -73,10 +73,34 @@ header nav #settingsSymbol {
     color: #2aa198;
 }
 
-#offcanvasSettings, #offcanvasAppointment {
+#offcanvasSettings {
     background-color: rgba(88,109,117,0.95);
+    color: var(--font-color);
 }
 
-#offcanvasSettingsLabel, #offcanvasAppointmentLabel {
+#offcanvasSettingsLabel, #modalAppointmentLabel {
     color:  var(--font-color);
+}
+
+ #modalAppointment .modal-content {
+    background-color: rgba(7, 54, 66, 1);
+    color: var(--font-color);
+}
+
+#modalAppointment .appointmentButtonSave {
+    background-color: #2aa198;
+    border: 0;
+}
+
+#modalAppointment button[class="btn-close"] i {
+    color: var(--font-color);
+}
+
+/* Override bootstrap existing classes */
+.modal-header {
+    border-bottom: 1px solid rgba(88,109,117,0.95);
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(88,109,117,0.95);
 }
