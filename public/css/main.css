@@ -1,25 +1,39 @@
+:root {
+  --font-color: #fff;
+  --default-bg-color: #002b36;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-    background-color: #002b36;
+    background-color: var(--default-bg-color);
 }
 
 header {
-    color: #fdf6e3;
+    color: var(--font-color);
     padding-top: 1em;
     padding-bottom: 2em;
-    background-color: #002b36;
-    
+    background-color: var(--default-bg-color);  
 }
+
 
 header nav a {
-    color:  #fdf6e3;
+    color:  var(--font-color);
 }
 
-#todo, #todoAdd {
-    color:  #fdf6e3;
+header nav {
+    text-align: right;
+}
+
+header nav #settingsSymbol {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+#todo {
+    color:  var(--font-color);
     background-color: rgba(7, 54, 66, 1);
     border-radius: 5px;
     padding: 0.5em;
@@ -27,7 +41,7 @@ header nav a {
 }
 
 #todo a {
-    color:  #fdf6e3;
+    color:  var(--font-color);
     text-decoration: none;
 }
 
@@ -38,11 +52,14 @@ header nav a {
 }
 
 #todoAdd {
-    background-color: rgba(88,109,117,1);
+    font-size: 3em;
+    color:#dc322f;
+    left: auto;
+    right: 0.2em;
+    bottom: 0;
 }
 #todoAdd h6 {
-    color: #002b36;
-   
+    color: #002b36; 
     padding-top: 1em;
     background-color: rgba(88,109,117,1);
 }
@@ -61,5 +78,5 @@ header nav a {
 }
 
 #offcanvasSettingsLabel, #offcanvasAppointmentLabel {
-    color:  #fdf6e3;
+    color:  var(--font-color);
 }
