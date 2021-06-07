@@ -18,6 +18,7 @@
 
   <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="js/app/app.js"></script>
+  <script src="js/app/ui_events.js"></script>
   <script src="js/app/pwa_install.js"></script>
 
 
@@ -43,7 +44,33 @@
 </head>
 
 <body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      /*
+     
+           const email = "alexanderpalmer@outlook.com";
+           const password = "DemoPasswort123!";
+     
+           firebase.auth().createUserWithEmailAndPassword(email, password)
+             .then((userCredential) => {
+               // Signed in
+               var user = userCredential.user;
+               console.log(userCredential);
+             })
+             .catch((error) => {
+               var errorCode = error.code;
+               var errorMessage = error.message;
+               console.log(errorCode, errorMessage);
+             });
+     
+           firebase.auth().onAuthStateChanged(user => {
+             console.log('onAuthStateChanged: ', user);
+           });
+     */
+    })
 
+  </script>
+  <!-- site header -->
   <header class="container sticky-top">
     <div class="row">
       <div class="col-10">
@@ -53,14 +80,14 @@
 
       <div class="col-2">
         <nav>
-          <a data-bs-toggle="offcanvas" href="#offcanvasSettings">
+          <a href="#offcanvasSettings" id="settings">
             <i id="settingsSymbol" class="bi bi-three-dots-vertical"></i>
           </a>
         </nav>
       </div>
     </div>
-
   </header>
+  <!-- Site body -->
   <main class="container">
     <!-- Appointment -->
     <article class="container" id="todo">
@@ -167,18 +194,28 @@
         </div>
       </div>
     </article>
-
   </main>
+  <!-- Site footer -->
+  <footer class="container">
+    <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
+      <i id="todoAdd" class="bi bi-plus-circle-fill fixed-bottom"></i>
+    </a>
+  </footer>
 
   <!-- Offcanvas Settings-->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSettings">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasSettingsLabel">Offcanvas</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+      <h5 class="offcanvas-title" id="offcanvasSettingsLabel">Hauptnavigation</h5>
+      <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-      <div>Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
-        etc.</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="#">Anmelden</a></li>
+        <li class="list-group-item" id="signin"><a href="#">Registrieren</a>
+        </li>
+      </ul>
+
+
     </div>
   </div>
 
@@ -188,7 +225,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalAppointmentLabel">Neue Aufgabe</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <form>
           <div class="modal-body">
@@ -211,11 +248,42 @@
     </div>
   </div>
 
-  <footer class="container">
-    <a data-bs-toggle="modal" data-bs-target="#modalAppointment">
-      <i id="todoAdd" class="bi bi-plus-circle-fill fixed-bottom"></i>
-    </a>
-  </footer>
+  <!-- Modal New or Sign-In New User -->
+  <div class="modal fade" id="modalSignIn" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSignInLabel">Registrieren</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="container m-0 mb-2 p-0">
+              <label for="modalSignInFirstname" class="form-label">Vorname</label>
+              <input type="text" class="form-control" id="modalSignInFirstname">
+            </div>
+            <div class="container m-0 p-0">
+              <label for="modalSignInLastname" class="form-label">Nachname</label>
+              <input type="text" class="form-control" id="modalSignInLastname">
+            </div>
+            <div class="container m-0 p-0">
+              <label for="modalSignInPassword1" class="form-label">Passwort</label>
+              <input type="text" class="form-control" id="modalSignInPassword1">
+            </div>
+            <div class="container m-0 p-0">
+              <label for="modalSignInPassword2" class="form-label">Passwort wiederholen</label>
+              <input type="text" class="form-control" id="modalSignInPassword2">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary modalSignInButtonSave">
+              Registrieren
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal PWA Installation -->
   <div class="modal fade" id="modalPWAInstallPrompt" tabindex="-1">

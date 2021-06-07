@@ -78,16 +78,28 @@ header nav #settingsSymbol {
     color: var(--font-color);
 }
 
+#offcanvasSettings [class*="list-group"] {
+    background-color: transparent;
+}
+
+#offcanvasSettings [class*="list-group"] a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--font-color);
+}
+
 #offcanvasSettingsLabel, #modalAppointmentLabel {
     color:  var(--font-color);
 }
 
- #modalAppointment .modal-content {
+ #modalAppointment .modal-content,
+ #modalSignIn .modal-content {
     background-color: rgba(7, 54, 66, 1);
     color: var(--font-color);
 }
 
-#modalAppointment .appointmentButtonSave {
+#modalAppointment .appointmentButtonSave,
+#modalSignIn .modalSignInButtonSave {
     background-color: #2aa198;
     border: 0;
 }
