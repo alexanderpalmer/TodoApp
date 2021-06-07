@@ -14,7 +14,7 @@ body {
 header {
     color: var(--font-color);
     padding-top: 1em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     background-color: var(--default-bg-color);  
 }
 
@@ -93,18 +93,26 @@ header nav #settingsSymbol {
 }
 
  #modalAppointment .modal-content,
- #modalSignIn .modal-content {
+ #modalSignIn .modal-content,
+ #modalLogIn .modal-content,
+ #modalRequestPassword .modal-content {
     background-color: rgba(7, 54, 66, 1);
     color: var(--font-color);
 }
 
 #modalAppointment .appointmentButtonSave,
-#modalSignIn .modalSignInButtonSave {
+#modalSignIn .modalSignInButtonSave,
+#modalLogIn .modalLogInButtonSave,
+#modalRequestPassword .modalRequestPasswordSave {
     background-color: #2aa198;
     border: 0;
 }
 
 #modalAppointment button[class="btn-close"] i {
+    color: var(--font-color);
+}
+
+#modalLogIn a {
     color: var(--font-color);
 }
 
@@ -115,4 +123,16 @@ header nav #settingsSymbol {
 
 .modal-footer {
     border-top: 1px solid rgba(88,109,117,0.95);
+}
+
+#todoFilter span[class$="active"] {
+    background-color:greenyellow!important;
+}
+
+#todoFilter span[class$="pending"] {
+    background-color:#dc322f!important;
+}
+
+#todoFilter span[class$="upcoming"] {
+    background-color:#00fff2!important;
 }

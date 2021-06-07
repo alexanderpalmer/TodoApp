@@ -89,6 +89,29 @@
   </header>
   <!-- Site body -->
   <main class="container">
+
+    <nav class="navbar d-flex justify-content-start" id="todoFilter">
+      <a href="#">
+        <span class="badge rounded-pill bg-secondary text-dark me-1 bage-upcoming">
+          <i class="bi bi-x"></i>
+          Demnächst
+        </span>
+      </a>
+      <a href="#">
+        <span class="badge rounded-pill bg-secondary text-dark me-1 bage-active">
+          <i class="bi bi-x"></i>
+          Aktiv
+        </span>
+      </a>
+      <a href="#">
+        <span class="badge rounded-pill bg-secondary text-dark me-1 bage-pending">
+          <i class="bi bi-x"></i>
+          Überfällig
+        </span>
+      </a>
+      <a href="#"><span class="badge rounded-pill bg-secondary text-dark bage-done">Abgeschlossen</span></a>
+    </nav>
+
     <!-- Appointment -->
     <article class="container" id="todo">
       <div class="row gx-0">
@@ -210,12 +233,9 @@
     </div>
     <div class="offcanvas-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><a href="#">Anmelden</a></li>
-        <li class="list-group-item" id="signin"><a href="#">Registrieren</a>
-        </li>
+        <li class="list-group-item" id="login"><a href="#">Anmelden</a></li>
+        <li class="list-group-item" id="signin"><a href="#">Registrieren</a></li>
       </ul>
-
-
     </div>
   </div>
 
@@ -248,7 +268,7 @@
     </div>
   </div>
 
-  <!-- Modal New or Sign-In New User -->
+  <!-- Modal Sign-In New User -->
   <div class="modal fade" id="modalSignIn" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -268,16 +288,78 @@
             </div>
             <div class="container m-0 p-0">
               <label for="modalSignInPassword1" class="form-label">Passwort</label>
-              <input type="text" class="form-control" id="modalSignInPassword1">
+              <input type="password" class="form-control" id="modalSignInPassword1">
             </div>
             <div class="container m-0 p-0">
               <label for="modalSignInPassword2" class="form-label">Passwort wiederholen</label>
-              <input type="text" class="form-control" id="modalSignInPassword2">
+              <input type="password" class="form-control" id="modalSignInPassword2">
             </div>
           </div>
           <div class="modal-footer">
+            <span></span>
             <button type="button" class="btn btn-primary modalSignInButtonSave">
               Registrieren
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Login existing User -->
+  <div class="modal fade" id="modalLogIn" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLogInLabel">Login</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="container m-0 p-0">
+              <label for="modalLogInEmail" class="form-label">E-Mail:</label>
+              <input type="email" class="form-control" id="modalLogInEmail">
+            </div>
+            <div class="container m-0 p-0">
+              <label for="modalLogInPassword" class="form-label">Passwort</label>
+              <input type="password" class="form-control" id="modalLogInPassword">
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <div class="">Noch kein Konto? <a href="#" id="modalLogInRegister">Registieren</a><br>
+              Passwort vergessen? <a href="#" id="modalLogInPasswordRequest">Anfordern</a></div>
+            <button type="button" class="btn btn-primary modalLogInButtonSave">
+              Anmelden
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Request Password -->
+  <div class="modal fade" id="modalRequestPassword" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRequestPasswordLabel">Passwort anfordern</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="container m-0 p-0">
+              <label for="modalRequestPasswordEmail" class="form-label">E-Mail:</label>
+              <input type="email" class="form-control" id="modalRequestPasswordEmail">
+            </div>
+            <div class="container m-0 p-0">
+              <p>
+                Sie werden eine E-Mail erhalten, falls die eingegebene E-Mail bei uns hinterlegt ist.
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary modalRequestPasswordSave">
+              Anfordern
             </button>
           </div>
         </form>
@@ -293,7 +375,6 @@
           <h5 class="modal-title" id="modalPWAInstallPromptLabel">PWA installieren</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-
         <div class="modal-body">
           Soll PWA installiert werden?
           <button id="pwaInstall" type="button" class="btn btn-primary"></button>
